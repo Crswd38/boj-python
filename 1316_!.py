@@ -9,5 +9,4 @@ for i in range(N):
         elif word[j] in word[j+1:]:
             cnt -= 1
             break
-
 print(cnt)
