@@ -1,17 +1,19 @@
 import sys
 
-N = int(sys.stdin.readline())
+T = int(sys.stdin.readline())
 sum = 0
-stack = []
-last = 0
-num = []
 
-for i in range(N):
-    
-
-for i in range(N):
-    A = int(sys.stdin.readline())
-    if last < A:
-        for _ in range(A):
-            print("+")
-        
+for i in range(T):
+    A = sys.stdin.readline().strip()
+    for j in A:
+        if j == "(":
+            sum += 1
+        elif j == ")":
+            sum -= 1
+        if sum < 0:
+            break
+    if sum == 0:
+        print("YES")
+    else:
+        print("NO")
+    sum = 0
