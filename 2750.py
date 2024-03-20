@@ -1,6 +1,6 @@
 import sys
 
-M,   N = map(int, sys.stdin.readline().strip())
+N = int(sys.stdin.readline().strip())
 arr = []
 
 for _ in range(N):
