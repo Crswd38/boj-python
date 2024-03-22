@@ -1,11 +1,6 @@
-import sys
 
-M,   N = map(int, sys.stdin.readline().strip())
-arr = []
 
-for _ in range(N):
-    arr.append(int(sys.stdin.readline().strip()))
-
-arr.sort()
-for i in arr:
-    print(i)
+def solution(arr):
+    for i in range(len(arr)):
+        arr[i] = arr[i] / 2 if arr[i] >= 50 else arr[i] * 2
+    return arr
