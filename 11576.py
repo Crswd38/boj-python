@@ -1,0 +1,14 @@
+import string
+import sys
+
+tmp = string.digits+string.ascii_lowercase
+def convert(num, base) :
+    q, r = divmod(num, base)
+    if q == 0 :
+        return tmp[r] 
+    else :
+        return convert(q, base) + tmp[r]
+
+A, B = map(int, sys.stdin.readline())
+m = int(sys.stdin.readline())
+number = list(map(int, sys.stdin.readline()))
