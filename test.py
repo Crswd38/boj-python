@@ -1,11 +1,14 @@
-def solution(numLog):
-    d = {1:"w", -1:"s", 10:"d", -10:"a"}
-    result = []
-    last = 0
-    cnt = 0
-    for i in numLog[1:]:
-        result.append(d[i - last])
-        last = i
-    return ''.join(result)
+import math
 
-print(solution([-1, 0]))
+def solution(numer1, denom1, numer2, denom2):
+    denom = (denom1 * denom2) // math.gcd(denom1, denom2)
+    numer = int(numer1 * denom / denom1 + numer2 * denom / denom2)
+
+    g = math.gcd(denom, numer)
+
+    numer //= g
+    denom //= g
+
+    return [numer, denom]
+
+print(solution(9, 2, 1, 3))
