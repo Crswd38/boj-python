@@ -1,14 +1,11 @@
-import math
+def solution(emergency):
+    arr = sorted(emergency)
+    result = []
+    for i in range(len(emergency)):
+        for j in range(len(emergency)):
+            if emergency[i] == arr[j]:
+                result.append(j)
+    return ''.join(result)
 
-def solution(numer1, denom1, numer2, denom2):
-    denom = (denom1 * denom2) // math.gcd(denom1, denom2)
-    numer = int(numer1 * denom / denom1 + numer2 * denom / denom2)
 
-    g = math.gcd(denom, numer)
-
-    numer //= g
-    denom //= g
-
-    return [numer, denom]
-
-print(solution(9, 2, 1, 3))
+print(solution([3, 76, 24]))
