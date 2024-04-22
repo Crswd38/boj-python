@@ -1,11 +1,9 @@
-def solution(emergency):
-    arr = sorted(emergency)
+def solution(intStrs, k, s, l):
     result = []
-    for i in range(len(emergency)):
-        for j in range(len(emergency)):
-            if emergency[i] == arr[j]:
-                result.append(j)
-    return ''.join(result)
+    for i in intStrs:
+        i = str(i)
+        if int(i[s:s+l]) > k:
+            result.append(int(i[s:s+l]))
+    return result
 
-
-print(solution([3, 76, 24]))
+print(solution(["0123456789","9876543210","9999999999999"],50000,5,5))
