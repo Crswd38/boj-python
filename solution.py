@@ -1,5 +1,4 @@
-n, m = map(int, input().split())
-sum = n
-for i in range(1, m):
-    sum *= n
-    print(str(sum)[-1])
+import random
+imagenet_labels = dict(enumerate(open('ilsvrc2012_wordnet_lemmas.txt')))
+
+print(imagenet_labels[random.randint(0, 1000)])
